@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/colorBackground">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary" app:title="Attendance" app:titleTextColor="@color/white"/>
+    <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_margin="12dp" app:cardCornerRadius="10dp" app:cardElevation="3dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+            <TextView android:text="Filter Attendance" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="@color/colorTextPrimary" android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <Spinner android:id="@+id/spinnerFilter" android:layout_width="match_parent"
+                android:layout_height="48dp" android:layout_marginBottom="10dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:hint="Student ID" android:layout_marginEnd="6dp">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etStudentId"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:hint="Room ID" android:layout_marginStart="6dp">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etRoomId"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnPickDate"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginEnd="6dp" android:text="Pick Date"/>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnFilter"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Apply Filter"/>
+            </LinearLayout>
+            <TextView android:id="@+id/tvSelectedDate" android:text="Today"
+                android:textSize="12sp" android:textColor="@color/colorTextSecondary"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView android:id="@+id/tvCount" android:text="0 records"
+        android:textSize="13sp" android:textColor="@color/colorTextSecondary"
+        android:paddingStart="16dp" android:paddingBottom="4dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvAttendance"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:padding="8dp" android:clipToPadding="false"/>
+</LinearLayout>

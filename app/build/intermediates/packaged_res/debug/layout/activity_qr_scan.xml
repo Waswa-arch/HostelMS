@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/colorBackground">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary" app:title="QR Scan Attendance" app:titleTextColor="@color/white"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center" android:padding="24dp">
+        <TextView android:text="📷" android:textSize="72sp" android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:text="Scan QR Code" android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary" android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:text="Point your camera at the QR code on the facility door"
+            android:textSize="14sp" android:textColor="@color/colorTextSecondary"
+            android:gravity="center" android:layout_marginBottom="32dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnScan"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:text="OPEN SCANNER" android:layout_marginBottom="24dp"/>
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:cardCornerRadius="10dp" android:layout_marginBottom="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:text="Last Scan:" android:textSize="12sp"
+                    android:textColor="@color/colorTextSecondary"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/tvScannedLocation" android:text="No scan yet"
+                    android:textSize="16sp" android:textStyle="bold" android:textColor="@color/colorTextPrimary"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <LinearLayout android:id="@+id/layoutActions"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:visibility="gone">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnCheckIn"
+                android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="1" android:layout_marginEnd="8dp"
+                android:text="CHECK IN" app:backgroundTint="@color/colorGreen"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnCheckOut"
+                android:layout_width="0dp" android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="CHECK OUT" app:backgroundTint="@color/colorRed"/>
+        </LinearLayout>
+        <TextView android:id="@+id/tvStatus" android:text=""
+            android:textSize="14sp" android:textColor="@color/colorGreen"
+            android:gravity="center" android:layout_marginTop="16dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark" android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorSurface"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+            <TextView android:text="Frequently Asked Questions"
+                android:textSize="18sp" android:textStyle="bold" android:textColor="@color/colorAccent"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+            <TextView android:text="Q: How do I book a room?"
+                android:textSize="14sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="A: Go to Booking → select a hostel → choose a room → pick your dates → confirm."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="Q: How do I submit a complaint?"
+                android:textSize="14sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="A: Tap Issues / Complaints on the dashboard and fill in the description form."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="Q: What does Inquiry do?"
+                android:textSize="14sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="A: Inquiry shows each hostel's contact person and phone number so you can reach them directly before booking."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="Q: Can I use the app offline?"
+                android:textSize="14sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="A: Some features (complaints, check-in, announcements) work offline using local storage and will sync when you reconnect."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

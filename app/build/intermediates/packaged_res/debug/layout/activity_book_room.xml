@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark" android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorSurface"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <TextView android:id="@+id/tvHostelName" android:textSize="20sp"
+                android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/tvRoomNumber" android:textSize="14sp"
+                android:textColor="@color/colorMuted" android:layout_marginTop="4dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:id="@+id/tvPrice" android:textSize="18sp" android:textStyle="bold"
+                android:textColor="@color/colorAccent" android:layout_marginTop="4dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <Spinner android:id="@+id/spMealBundle" android:background="@color/colorCard"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:popupBackground="@color/colorCard" android:layout_marginBottom="16dp"/>
+
+            <Button android:id="@+id/btnCheckIn" android:text="📅 Select Check-in Date"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                style="@style/AppButtonOutline" android:layout_marginBottom="10dp"/>
+            <Button android:id="@+id/btnCheckOut" android:text="📅 Select Check-out Date"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                style="@style/AppButtonOutline" android:layout_marginBottom="24dp"/>
+
+            <ProgressBar android:id="@+id/progressBar" android:visibility="gone"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:layout_marginBottom="8dp"/>
+
+            <Button android:id="@+id/btnBook" android:text="Confirm Booking"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                style="@style/AppButton"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

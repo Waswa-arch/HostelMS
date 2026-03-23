@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark" android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorSurface"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+            <TextView android:text="How to Use HostelMS"
+                android:textSize="18sp" android:textStyle="bold" android:textColor="@color/colorAccent"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+            <TextView android:text="1️⃣  Register / Login"
+                android:textSize="15sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="Create your account with your registration number, phone, and email. Then log in using your reg number and password."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_marginBottom="14dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="2️⃣  Browse Hostels"
+                android:textSize="15sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="Tap Booking or Inquiry to see available hostels with images, pricing, and amenities."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_marginBottom="14dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="3️⃣  Book a Room"
+                android:textSize="15sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="Select a hostel → choose a room → pick check-in/check-out dates → confirm. Your booking is saved automatically."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_marginBottom="14dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="4️⃣  Submit Issues"
+                android:textSize="15sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="Use Issues / Complaints to report any problems. Admin will respond within 48 hours."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_marginBottom="14dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="5️⃣  Stay Updated"
+                android:textSize="15sp" android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <TextView android:text="Check Notices regularly for announcements from management."
+                android:textSize="13sp" android:textColor="@color/colorMuted"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

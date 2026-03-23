@@ -1,0 +1,12 @@
+<?php
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') exit(0);
+require_once '../db.php';
+
+$rows = $pdo->query("SELECT c.*, s.name AS student_name
+    FROM complaints c JOIN students s ON c.student_id=s.id
+    ORDER BY c.created_at DESC")->fetchAll();
+echo json_encode($rows);
+?>

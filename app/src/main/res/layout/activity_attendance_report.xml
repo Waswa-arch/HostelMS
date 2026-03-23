@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark" android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:title="Attendance Report"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorSurface"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp" android:background="@color/colorSurface">
+        <Spinner android:id="@+id/spLocation" android:background="@color/colorCard"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:popupBackground="@color/colorCard" android:layout_marginBottom="10dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnFromDate" android:text="From Date"
+                android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                android:layout_marginEnd="6dp" style="@style/AppButtonOutline" android:textSize="12sp"/>
+            <Button android:id="@+id/btnToDate" android:text="To Date"
+                android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                android:layout_marginEnd="6dp" style="@style/AppButtonOutline" android:textSize="12sp"/>
+            <EditText android:id="@+id/etStudentIdFilter" android:hint="Student ID"
+                android:inputType="number" android:background="@color/colorCard"
+                android:textColor="@color/colorText" android:textColorHint="@color/colorSub" android:padding="8dp"
+                android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"/>
+        </LinearLayout>
+        <Button android:id="@+id/btnFilter" android:text="Apply Filter"
+            android:layout_width="match_parent" android:layout_height="40dp"
+            android:layout_marginTop="8dp" style="@style/AppButton" android:textSize="13sp"/>
+        <TextView android:id="@+id/tvCount" android:text="Records: 0"
+            android:textColor="@color/colorMuted" android:textSize="13sp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvAttendance"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:padding="8dp" android:clipToPadding="false"/>
+</LinearLayout>

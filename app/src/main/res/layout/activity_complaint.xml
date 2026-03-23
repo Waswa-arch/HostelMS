@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark" android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:title="Issues &amp; Complaints"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorSurface"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+            <TextView android:text="Submit a Complaint" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="@color/colorText" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+            <Spinner android:id="@+id/spCategory" android:background="@color/colorCard"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:popupBackground="@color/colorCard" android:layout_marginBottom="10dp"/>
+            <Spinner android:id="@+id/spPriority" android:background="@color/colorCard"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:popupBackground="@color/colorCard" android:layout_marginBottom="10dp"/>
+            <EditText android:id="@+id/etSubject" android:hint="Subject (optional)"
+                android:background="@color/colorCard" android:textColor="@color/colorText"
+                android:textColorHint="@color/colorSub" android:padding="12dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+            <EditText android:id="@+id/etDescription" android:hint="Describe your issue in detail... *"
+                android:background="@color/colorCard" android:textColor="@color/colorText"
+                android:textColorHint="@color/colorSub" android:padding="12dp"
+                android:minHeight="100dp" android:gravity="top" android:inputType="textMultiLine"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+            <ProgressBar android:id="@+id/progressBar" android:visibility="gone"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:layout_marginBottom="6dp"/>
+            <Button android:id="@+id/btnSubmit" android:text="Submit Complaint"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                style="@style/AppButton" android:layout_marginBottom="24dp"/>
+            <TextView android:text="Your Previous Complaints" android:textSize="15sp"
+                android:textStyle="bold" android:textColor="@color/colorText"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvComplaints"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

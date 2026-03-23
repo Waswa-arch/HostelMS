@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark" android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:title="Manage Students"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorSurface"/>
+    <EditText android:id="@+id/etSearch" android:hint="Search by name or reg number..."
+        android:background="@color/colorCard" android:textColor="@color/colorText"
+        android:textColorHint="@color/colorSub" android:padding="14dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_margin="16dp"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvStudents"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:padding="8dp" android:clipToPadding="false"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end" android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        xmlns:app="http://schemas.android.com/apk/res-auto" app:backgroundTint="@color/colorAccent"/>
+</LinearLayout>

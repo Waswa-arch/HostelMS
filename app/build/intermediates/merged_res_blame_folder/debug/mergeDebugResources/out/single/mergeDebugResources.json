@@ -1,0 +1,214 @@
+[
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_room_checklist.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_room_checklist.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_student.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_announcements.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_announcements.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_checkin.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_checkin.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_admin_dashboard.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_admin_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_check_in.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_check_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_announcements_student.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_announcements_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\menu_menu_admin.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\menu\\menu_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_add_edit_room.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_add_edit_room.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\menu_menu_student.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\menu\\menu_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_qr_scan.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_qr_scan.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_how_to_use.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_how_to_use.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_hostel_detail.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_hostel_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\mipmap-hdpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_attendance.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_attendance.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_complaint.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_complaint.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_booking.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_booking.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_manage_rooms.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_manage_rooms.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_hostel_list.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_hostel_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_hostel.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_hostel.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_add_edit_student.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_add_edit_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_attendance_report.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_attendance_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_room_api.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_room_api.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_complaint.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_complaint.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_room_admin.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_room_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_faq.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_faq.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_manage_complaints.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_manage_complaints.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_complaints_admin.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_complaints_admin.xml"
+    },
+    {
+        "merged": "com.hostelms.app-debug-38:/layout_item_room_book.xml.flat",
+        "source": "com.hostelms.app-main-40:/layout/item_room_book.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_booking_confirmation.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_booking_confirmation.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_allocate_room.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_allocate_room.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_student_dashboard.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_student_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_announcement.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_announcement.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_announcements_admin.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_announcements_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_manage_students.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_manage_students.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_book_room.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_book_room.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_student_profile.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_student_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_attendance.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_attendance.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_tile_dashboard.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\tile_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_role_select.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_role_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\mipmap-hdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_room_book.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_room_book.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_room_checklist.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_room_checklist.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_complaints_student.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_complaints_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_add_announcement.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_add_announcement.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_row_info.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\row_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_qr_generate.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_qr_generate.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_checklist_row.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_checklist_row.xml"
+    }
+]

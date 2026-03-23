@@ -1,0 +1,2 @@
+rootProject.name = "HostelMS"
+include ':app'
