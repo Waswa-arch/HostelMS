@@ -1,70 +1,149 @@
 package com.hostelms.adapters;
 
+import android.content.Context;
 import android.view.*;
 import android.widget.*;
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.*;
 import com.bumptech.glide.Glide;
 import com.hostelms.R;
+import com.hostelms.database.AppDatabase;
+import com.hostelms.database.entities.Room;
 import com.hostelms.models.Hostel;
 import java.util.List;
 
-/**
- * NEW adapter for HostelListActivity.
- * Shows hostel image + name always.
- * In "inquiry" mode also shows person-in-charge and contact number.
- */
 public class HostelAdapter extends RecyclerView.Adapter<HostelAdapter.VH> {
-    public interface OnClick { void onClick(Hostel h); }
 
-    private final List<Hostel> list;
+    public interface OnHostelClick { void onClick(Hostel hostel); }
+
+    private final List<Hostel> hostels;
     private final String mode;
-    private final OnClick listener;
+    private final OnHostelClick listener;
 
-    public HostelAdapter(List<Hostel> list, String mode, OnClick listener) {
-        this.list = list; this.mode = mode; this.listener = listener;
+    // Image resources mapped by hostel name keyword (fallback)
+    private static int getHostelImage(String name) {
+        if (name == null) return R.drawable.hostel_baobab;
+        String lower = name.toLowerCase();
+        if (lower.contains("acacia"))  return R.drawable.hostel_acacia;
+        if (lower.contains("savanna")) return R.drawable.hostel_savanna;
+        return R.drawable.hostel_baobab; // default
+    }
+
+    // Distance text per hostel
+    private static String getDistance(String name) {
+        if (name == null) return "📍 200m from main campus";
+        String lower = name.toLowerCase();
+        if (lower.contains("acacia"))  return "📍 350m from main campus";
+        if (lower.contains("savanna")) return "📍 100m from main campus";
+        return "📍 200m from main campus";
+    }
+
+    // Description per hostel (fallback)
+    private static String getDescription(String name) {
+        if (name == null) return "Quiet study environment.";
+        String lower = name.toLowerCase();
+        if (lower.contains("acacia"))  return "Modern block completed 2019. All rooms en-suite. Female-only residence.";
+        if (lower.contains("savanna")) return "Budget-friendly. Central location. High-energy social atmosphere.";
+        return "Classic stone architecture, established 1978. Quiet study environment.";
+    }
+
+    public HostelAdapter(List<Hostel> hostels, String mode, OnHostelClick listener) {
+        this.hostels = hostels;
+        this.mode = mode;
+        this.listener = listener;
     }
 
     @NonNull @Override
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new VH(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_hostel, parent, false));
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_hostel_card, parent, false);
+        return new VH(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull VH h, int pos) {
-        Hostel hostel = list.get(pos);
-        h.tvName.setText(hostel.name);
+        Hostel hostel = hostels.get(pos);
+        Context ctx = h.itemView.getContext();
 
-        Glide.with(h.ivImage.getContext())
-                .load(hostel.imageUrl)
-                .placeholder(android.R.drawable.ic_menu_gallery)
-                .centerCrop()
-                .into(h.ivImage);
-
-        if ("inquiry".equals(mode)) {
-            h.tvPersonInCharge.setVisibility(View.VISIBLE);
-            h.tvContact.setVisibility(View.VISIBLE);
-            h.tvPersonInCharge.setText("In charge: " + hostel.personInCharge);
-            h.tvContact.setText("Contact: " + hostel.contactNumber);
+        // Image
+        if (hostel.imageUrl != null && !hostel.imageUrl.isEmpty()) {
+            Glide.with(ctx)
+                    .load(hostel.imageUrl)
+                    .placeholder(R.drawable.hostel_baobab)
+                    .into(h.ivImage);
         } else {
-            h.tvPersonInCharge.setVisibility(View.GONE);
-            h.tvContact.setVisibility(View.GONE);
+            h.ivImage.setImageResource(getHostelImage(hostel.name));
         }
-        h.itemView.setOnClickListener(v -> listener.onClick(hostel));
+
+        // Text
+        h.tvName.setText(hostel.name);
+        h.tvDistance.setText(getDistance(hostel.name));
+        h.tvDescription.setText(hostel.description != null && !hostel.description.isEmpty() 
+                ? hostel.description : getDescription(hostel.name));
+
+        // Gender badge from rooms
+        AppDatabase db = AppDatabase.getInstance(ctx);
+        List<Room> rooms = db.roomDao().getByHostel(hostel.name);
+        String gender = "Mixed";
+        if (!rooms.isEmpty()) gender = rooms.get(0).gender;
+        h.tvGender.setText(gender);
+
+        // Lowest price
+        double minPrice = Double.MAX_VALUE;
+        for (Room r : rooms) {
+            if (r.pricePerSemester < minPrice) minPrice = r.pricePerSemester;
+        }
+        h.tvPrice.setText(minPrice < Double.MAX_VALUE
+                ? "KES " + String.format("%,.0f", minPrice) + "/sem"
+                : "See rooms");
+
+        // Amenity chips — derive from rooms or use defaults
+        h.llAmenities.removeAllViews();
+        String[] chips;
+        String lower = hostel.name != null ? hostel.name.toLowerCase() : "";
+        if (lower.contains("acacia")) {
+            chips = new String[]{"Wi-Fi", "En-suite", "Gym", "Security", "Lounge"};
+        } else if (lower.contains("savanna")) {
+            chips = new String[]{"Wi-Fi", "Canteen", "Games Room", "Parking", "Security"};
+        } else {
+            chips = new String[]{"Wi-Fi", "Laundry", "Common Room", "Canteen", "Security"};
+        }
+        for (String chip : chips) {
+            TextView tv = new TextView(ctx);
+            tv.setText(chip);
+            tv.setTextSize(11f);
+            tv.setTextColor(0xFF94A3B8);
+            tv.setBackgroundResource(R.drawable.chip_bg);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            lp.setMarginEnd(8);
+            tv.setLayoutParams(lp);
+            tv.setPadding(20, 6, 20, 6);
+            h.llAmenities.addView(tv);
+        }
+
+        h.btnView.setOnClickListener(v -> listener.onClick(hostel));
     }
 
-    @Override public int getItemCount() { return list.size(); }
+    @Override public int getItemCount() { return hostels.size(); }
 
     static class VH extends RecyclerView.ViewHolder {
         ImageView ivImage;
-        TextView tvName, tvPersonInCharge, tvContact;
+        TextView tvName, tvDistance, tvDescription, tvGender, tvPrice;
+        LinearLayout llAmenities;
+        Button btnView;
+
         VH(View v) {
             super(v);
-            ivImage          = v.findViewById(R.id.ivImage);
-            tvName           = v.findViewById(R.id.tvName);
-            tvPersonInCharge = v.findViewById(R.id.tvPersonInCharge);
-            tvContact        = v.findViewById(R.id.tvContact);
+            ivImage       = v.findViewById(R.id.ivHostelImage);
+            tvName        = v.findViewById(R.id.tvHostelName);
+            tvDistance    = v.findViewById(R.id.tvDistance);
+            tvDescription = v.findViewById(R.id.tvDescription);
+            tvGender      = v.findViewById(R.id.tvGenderBadge);
+            tvPrice       = v.findViewById(R.id.tvPriceFrom);
+            llAmenities   = v.findViewById(R.id.llAmenities);
+            btnView       = v.findViewById(R.id.btnViewRooms);
         }
     }
 }

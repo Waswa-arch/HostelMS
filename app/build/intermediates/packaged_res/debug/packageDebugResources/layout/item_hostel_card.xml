@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="@color/colorCard"
+    app:cardElevation="4dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/colorBorder">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ── IMAGE BANNER ─────────────────────────────── -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+
+            <!-- Hostel illustration -->
+            <ImageView
+                android:id="@+id/ivHostelImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/hostel_baobab"/>
+
+            <!-- Dark gradient overlay at the bottom of image -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/gradient_image_overlay"/>
+
+            <!-- Gender badge top-right -->
+            <TextView
+                android:id="@+id/tvGenderBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_margin="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Mixed"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@drawable/badge_gender_bg"
+                android:letterSpacing="0.05"/>
+
+            <!-- Hostel name overlaid on image bottom -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tvHostelName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Baobab Hall"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/tvDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 200m from main campus"
+                    android:textSize="12sp"
+                    android:textColor="#ddeeff"/>
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- ── DETAILS ────────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Classic stone architecture. Quiet study environment."
+                android:textSize="13sp"
+                android:textColor="@color/colorMuted"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Amenity chips row -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:layout_marginBottom="14dp">
+                <LinearLayout
+                    android:id="@+id/llAmenities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"/>
+            </HorizontalScrollView>
+
+            <!-- Price + View button row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="FROM"
+                        android:textSize="10sp"
+                        android:textColor="@color/colorSub"
+                        android:letterSpacing="0.1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvPriceFrom"
+                        android:text="KES 7,500/sem"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnViewRooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:text="View Rooms →"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    style="@style/AppButton"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

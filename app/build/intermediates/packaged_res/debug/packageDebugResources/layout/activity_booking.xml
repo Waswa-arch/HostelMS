@@ -1,29 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark" android:orientation="vertical">
-    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:title="Book a Room"
-        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/colorSurface"/>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="16dp">
-        <Spinner android:id="@+id/spHostel" android:background="@color/colorCard"
-            android:layout_width="match_parent" android:layout_height="48dp"
-            android:popupBackground="@color/colorCard" android:layout_marginBottom="10dp"/>
-        <Spinner android:id="@+id/spMealBundle" android:background="@color/colorCard"
-            android:layout_width="match_parent" android:layout_height="48dp"
-            android:popupBackground="@color/colorCard"/>
+
+    <!-- ══ STEP 1: Hostel List ══════════════════════════════════════════════ -->
+    <LinearLayout
+        android:id="@+id/layoutStep1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:text="Choose your hostel"
+            android:textSize="13sp"
+            android:textColor="@color/colorMuted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHostels"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="4dp"
+            android:paddingBottom="20dp"
+            android:clipToPadding="false"/>
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvRooms"
-        android:layout_width="match_parent" android:layout_height="0dp"
-        android:layout_weight="1" android:padding="8dp" android:clipToPadding="false"/>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="16dp"
-        android:background="@color/colorSurface">
-        <TextView android:id="@+id/tvSelectedRoom" android:text="Tap a room to select"
-            android:textColor="@color/colorMuted" android:textSize="13sp"
-            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
-        <Button android:id="@+id/btnBook" android:text="Confirm Booking"
-            android:layout_width="match_parent" android:layout_height="52dp" style="@style/AppButton"/>
+
+    <!-- ══ STEP 2: Room Picker (hidden until hostel chosen) ═════════════════ -->
+    <LinearLayout
+        android:id="@+id/layoutStep2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvStep2Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select a Room"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorText"
+            android:padding="16dp"
+            android:background="@color/colorSurface"/>
+
+        <!-- Room list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRooms"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:clipToPadding="false"/>
+
+        <!-- Bottom panel -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/colorSurface">
+
+            <!-- Meal bundle spinner -->
+            <TextView
+                android:text="MEAL BUNDLE"
+                android:textColor="@color/colorSub"
+                android:textSize="11sp"
+                android:letterSpacing="0.08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spMealBundle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/colorCard"
+                android:popupBackground="@color/colorCard"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Selected room summary -->
+            <TextView
+                android:id="@+id/tvSelectedRoom"
+                android:text="Tap a room below to select it"
+                android:textColor="@color/colorMuted"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Buttons row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnBackToHostels"
+                    android:text="← Back"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    style="@style/AppButtonOutline"
+                    android:textSize="13sp"/>
+
+                <Button
+                    android:id="@+id/btnBook"
+                    android:text="Confirm Booking"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="2"
+                    style="@style/AppButton"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>

@@ -3014,6 +3014,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable badge_gender_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3022,11 +3023,16 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable chip_bg
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable gradient_image_overlay
+drawable hostel_acacia
+drawable hostel_baobab
+drawable hostel_savanna
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
@@ -3215,6 +3221,7 @@ id bounceStart
 id btnAddNote
 id btnAdmin
 id btnAllocate
+id btnBackToHostels
 id btnBook
 id btnCheckIn
 id btnCheckOut
@@ -3238,6 +3245,7 @@ id btnSubmit
 id btnSubmitCheckin
 id btnSubmitChecklist
 id btnToDate
+id btnViewRooms
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3422,6 +3430,8 @@ id jumpToStart
 id labeled
 id layout
 id layoutActions
+id layoutStep1
+id layoutStep2
 id left
 id leftToRight
 id legacy
@@ -3430,6 +3440,7 @@ id line3
 id linear
 id listMode
 id list_item
+id llAmenities
 id m3_side_sheet
 id marquee
 id masked
@@ -3607,7 +3618,6 @@ id snapMargins
 id south
 id spCategory
 id spGender
-id spHostel
 id spLocation
 id spMealBundle
 id spPriority
@@ -3705,10 +3715,12 @@ id tvCount
 id tvCourse
 id tvDate
 id tvDescription
+id tvDistance
 id tvEmail
 id tvEmailLabel
 id tvEmoji
 id tvGender
+id tvGenderBadge
 id tvHostel
 id tvHostelName
 id tvItemLabel
@@ -3724,6 +3736,7 @@ id tvOwed
 id tvPersonInCharge
 id tvPhone
 id tvPrice
+id tvPriceFrom
 id tvProgress
 id tvQrContent
 id tvRegNo
@@ -3736,6 +3749,7 @@ id tvScannedLocation
 id tvSelectedDate
 id tvSelectedRoom
 id tvStatus
+id tvStep2Title
 id tvStudent
 id tvStudentName
 id tvSubject
@@ -3953,6 +3967,7 @@ layout item_attendance
 layout item_checklist_row
 layout item_complaint
 layout item_hostel
+layout item_hostel_card
 layout item_room_admin
 layout item_room_api
 layout item_room_book

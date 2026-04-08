@@ -3013,6 +3013,7 @@ int drawable abc_textfield_search_material 0x7f070075
 int drawable abc_vector_test 0x7f070076
 int drawable avd_hide_password 0x7f070077
 int drawable avd_show_password 0x7f070078
+int drawable badge_gender_bg 0x7f0700dc
 int drawable btn_checkbox_checked_mtrl 0x7f070079
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f07007a
 int drawable btn_checkbox_unchecked_mtrl 0x7f07007b
@@ -3021,11 +3022,16 @@ int drawable btn_radio_off_mtrl 0x7f07007d
 int drawable btn_radio_off_to_on_mtrl_animation 0x7f07007e
 int drawable btn_radio_on_mtrl 0x7f07007f
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f070080
+int drawable chip_bg 0x7f0700dd
 int drawable design_fab_background 0x7f070081
 int drawable design_ic_visibility 0x7f070082
 int drawable design_ic_visibility_off 0x7f070083
 int drawable design_password_eye 0x7f070084
 int drawable design_snackbar_background 0x7f070085
+int drawable gradient_image_overlay 0x7f0700de
+int drawable hostel_acacia 0x7f0700df
+int drawable hostel_baobab 0x7f0700e0
+int drawable hostel_savanna 0x7f0700e1
 int drawable ic_arrow_back_black_24 0x7f070086
 int drawable ic_clear_black_24 0x7f070087
 int drawable ic_clock_black_24dp 0x7f070088
@@ -3214,6 +3220,7 @@ int id bounceStart 0x7f080062
 int id btnAddNote 0x7f080063
 int id btnAdmin 0x7f080064
 int id btnAllocate 0x7f080065
+int id btnBackToHostels 0x7f08029f
 int id btnBook 0x7f080066
 int id btnCheckIn 0x7f080067
 int id btnCheckOut 0x7f080068
@@ -3237,6 +3244,7 @@ int id btnSubmit 0x7f080079
 int id btnSubmitCheckin 0x7f08007a
 int id btnSubmitChecklist 0x7f08007b
 int id btnToDate 0x7f08007c
+int id btnViewRooms 0x7f0802a0
 int id buttonPanel 0x7f08007d
 int id cache_measures 0x7f08007e
 int id callMeasure 0x7f08007f
@@ -3421,6 +3429,8 @@ int id jumpToStart 0x7f080131
 int id labeled 0x7f080132
 int id layout 0x7f080133
 int id layoutActions 0x7f080134
+int id layoutStep1 0x7f0802a1
+int id layoutStep2 0x7f0802a2
 int id left 0x7f080135
 int id leftToRight 0x7f080136
 int id legacy 0x7f080137
@@ -3429,6 +3439,7 @@ int id line3 0x7f080139
 int id linear 0x7f08013a
 int id listMode 0x7f08013b
 int id list_item 0x7f08013c
+int id llAmenities 0x7f0802a3
 int id m3_side_sheet 0x7f08013d
 int id marquee 0x7f08013e
 int id masked 0x7f08013f
@@ -3606,7 +3617,6 @@ int id snapMargins 0x7f0801ea
 int id south 0x7f0801eb
 int id spCategory 0x7f0801ec
 int id spGender 0x7f0801ed
-int id spHostel 0x7f0801ee
 int id spLocation 0x7f0801ef
 int id spMealBundle 0x7f0801f0
 int id spPriority 0x7f0801f1
@@ -3704,10 +3714,12 @@ int id tvCount 0x7f08024c
 int id tvCourse 0x7f08024d
 int id tvDate 0x7f08024e
 int id tvDescription 0x7f08024f
+int id tvDistance 0x7f0802a4
 int id tvEmail 0x7f080250
 int id tvEmailLabel 0x7f080251
 int id tvEmoji 0x7f080252
 int id tvGender 0x7f080253
+int id tvGenderBadge 0x7f0802a5
 int id tvHostel 0x7f080254
 int id tvHostelName 0x7f080255
 int id tvItemLabel 0x7f080256
@@ -3723,6 +3735,7 @@ int id tvOwed 0x7f08025f
 int id tvPersonInCharge 0x7f080260
 int id tvPhone 0x7f080261
 int id tvPrice 0x7f080262
+int id tvPriceFrom 0x7f0802a6
 int id tvProgress 0x7f080263
 int id tvQrContent 0x7f080264
 int id tvRegNo 0x7f080265
@@ -3735,6 +3748,7 @@ int id tvScannedLocation 0x7f08026b
 int id tvSelectedDate 0x7f08026c
 int id tvSelectedRoom 0x7f08026d
 int id tvStatus 0x7f08026e
+int id tvStep2Title 0x7f0802a7
 int id tvStudent 0x7f08026f
 int id tvStudentName 0x7f080270
 int id tvSubject 0x7f080271
@@ -3952,6 +3966,7 @@ int layout item_attendance 0x7f0b004f
 int layout item_checklist_row 0x7f0b0050
 int layout item_complaint 0x7f0b0051
 int layout item_hostel 0x7f0b0052
+int layout item_hostel_card 0x7f0b0099
 int layout item_room_admin 0x7f0b0053
 int layout item_room_api 0x7f0b0054
 int layout item_room_book 0x7f0b0055

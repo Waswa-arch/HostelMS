@@ -24,10 +24,17 @@ dimen margin_small
 dimen text_body
 dimen text_small
 dimen text_title
+drawable badge_gender_bg
+drawable chip_bg
+drawable gradient_image_overlay
+drawable hostel_acacia
+drawable hostel_baobab
+drawable hostel_savanna
 id action_logout
 id btnAddNote
 id btnAdmin
 id btnAllocate
+id btnBackToHostels
 id btnBook
 id btnCheckIn
 id btnCheckOut
@@ -51,6 +58,7 @@ id btnSubmit
 id btnSubmitCheckin
 id btnSubmitChecklist
 id btnToDate
+id btnViewRooms
 id card
 id cardAllocate
 id cardAnnounce
@@ -101,6 +109,9 @@ id ivHostelImage
 id ivImage
 id ivQr
 id layoutActions
+id layoutStep1
+id layoutStep2
+id llAmenities
 id progressBar
 id rowRegNo
 id rvAnnouncements
@@ -113,7 +124,6 @@ id rvRooms
 id rvStudents
 id spCategory
 id spGender
-id spHostel
 id spLocation
 id spMealBundle
 id spPriority
@@ -142,10 +152,12 @@ id tvCount
 id tvCourse
 id tvDate
 id tvDescription
+id tvDistance
 id tvEmail
 id tvEmailLabel
 id tvEmoji
 id tvGender
+id tvGenderBadge
 id tvHostel
 id tvHostelName
 id tvItemLabel
@@ -161,6 +173,7 @@ id tvOwed
 id tvPersonInCharge
 id tvPhone
 id tvPrice
+id tvPriceFrom
 id tvProgress
 id tvQrContent
 id tvRegNo
@@ -173,6 +186,7 @@ id tvScannedLocation
 id tvSelectedDate
 id tvSelectedRoom
 id tvStatus
+id tvStep2Title
 id tvStudent
 id tvStudentName
 id tvSubject
@@ -224,6 +238,7 @@ layout item_attendance
 layout item_checklist_row
 layout item_complaint
 layout item_hostel
+layout item_hostel_card
 layout item_room_admin
 layout item_room_api
 layout item_room_book

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:startColor="#2d1a00" android:endColor="#4a2e00" android:angle="135"/>
+        </shape>
+    </item>
+    <!-- Building body -->
+    <item android:top="25dp" android:left="10dp" android:right="10dp" android:bottom="20dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#e8c98a"/>
+            <corners android:radius="2dp"/>
+        </shape>
+    </item>
+    <!-- Flat roof line -->
+    <item android:top="25dp" android:left="10dp" android:right="10dp" android:bottom="110dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#c8781a"/>
+        </shape>
+    </item>
+    <!-- Windows row 1 -->
+    <item android:top="35dp" android:left="22dp" android:right="120dp" android:bottom="100dp">
+        <shape android:shape="rectangle"><solid android:color="#fff8e1"/></shape>
+    </item>
+    <item android:top="35dp" android:left="85dp" android:right="57dp" android:bottom="100dp">
+        <shape android:shape="rectangle"><solid android:color="#fff8e1"/></shape>
+    </item>
+    <item android:top="35dp" android:left="145dp" android:right="22dp" android:bottom="100dp">
+        <shape android:shape="rectangle"><solid android:color="#fff8e1"/></shape>
+    </item>
+    <!-- Windows row 2 -->
+    <item android:top="65dp" android:left="22dp" android:right="120dp" android:bottom="70dp">
+        <shape android:shape="rectangle"><solid android:color="#fff8e1"/></shape>
+    </item>
+    <item android:top="65dp" android:left="85dp" android:right="57dp" android:bottom="70dp">
+        <shape android:shape="rectangle"><solid android:color="#fff8e1"/></shape>
+    </item>
+    <item android:top="65dp" android:left="145dp" android:right="22dp" android:bottom="70dp">
+        <shape android:shape="rectangle"><solid android:color="#fff8e1"/></shape>
+    </item>
+    <!-- Door -->
+    <item android:top="95dp" android:left="72dp" android:right="72dp" android:bottom="20dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#c8781a"/>
+            <corners android:topLeftRadius="2dp" android:topRightRadius="2dp"/>
+        </shape>
+    </item>
+    <!-- Path -->
+    <item android:top="120dp" android:left="82dp" android:right="82dp" android:bottom="12dp">
+        <shape android:shape="rectangle"><solid android:color="#d4b483"/></shape>
+    </item>
+</layer-list>
