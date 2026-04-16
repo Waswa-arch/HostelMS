@@ -68,6 +68,7 @@ id cardBooking
 id cardCheckin
 id cardComplaints
 id cardFaq
+id cardHostelAssigned
 id cardHowToUse
 id cardInquiry
 id cardProfile
@@ -112,14 +113,16 @@ id layoutActions
 id layoutStep1
 id layoutStep2
 id llAmenities
+id noticesContent
+id profileContent
 id progressBar
-id rowRegNo
 id rvAnnouncements
 id rvAttendance
 id rvChecklist
 id rvComplaints
 id rvHostels
 id rvMyComplaints
+id rvNotices
 id rvRooms
 id rvStudents
 id spCategory
@@ -136,9 +139,12 @@ id spinnerCategory
 id spinnerFilter
 id spinnerPriority
 id spinnerTarget
+id tabNotices
+id tabProfile
 id toolbar
 id tvAdmission
 id tvAge
+id tvAllocateStatus
 id tvAmenities
 id tvAuthor
 id tvAvailableRooms
@@ -159,7 +165,10 @@ id tvEmoji
 id tvGender
 id tvGenderBadge
 id tvHostel
+id tvHostelDetail
 id tvHostelName
+id tvHostelStatus
+id tvIcon
 id tvItemLabel
 id tvItemStatus
 id tvLabel
@@ -167,6 +176,8 @@ id tvLocation
 id tvLogin
 id tvLoginTitle
 id tvName
+id tvNoNotices
+id tvNoticeBadge
 id tvOccupied
 id tvOpenComplaints
 id tvOwed
@@ -190,6 +201,8 @@ id tvStep2Title
 id tvStudent
 id tvStudentName
 id tvSubject
+id tvTabNotices
+id tvTabProfile
 id tvTileIcon
 id tvTileLabel
 id tvTime
@@ -239,6 +252,7 @@ layout item_checklist_row
 layout item_complaint
 layout item_hostel
 layout item_hostel_card
+layout item_notification
 layout item_room_admin
 layout item_room_api
 layout item_room_book

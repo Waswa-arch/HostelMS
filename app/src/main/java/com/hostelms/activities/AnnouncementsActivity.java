@@ -20,11 +20,6 @@ import java.util.List;
 
 /**
  * REFACTORED from original AnnouncementsActivity.
- *
- * Changes:
- *  - Tries get_announcements.php API first.
- *  - Falls back to local Room DB announcements if server unreachable.
- *  - ProgressBar added.
  */
 public class AnnouncementsActivity extends AppCompatActivity {
     private RecyclerView rv;

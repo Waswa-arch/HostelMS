@@ -21,9 +21,6 @@ import java.util.Map;
 
 /**
  * UPDATED from previous refactor.
- *
- * Change: showConfirmation() now also passes booking_id to
- * BookingConfirmationActivity so it can be forwarded to RoomChecklistActivity.
  */
 public class BookRoomActivity extends AppCompatActivity {
     private String checkInDate = "", checkOutDate = "";
@@ -102,7 +99,6 @@ public class BookRoomActivity extends AppCompatActivity {
                 try {
                     JSONObject obj = new JSONObject(response);
                     if ("success".equals(obj.getString("status"))) {
-                        // API returned a booking_id – forward it to confirmation screen
                         int bookingId = obj.optInt("booking_id", -1);
                         showConfirmation(bookingId);
                     } else {
@@ -139,15 +135,13 @@ public class BookRoomActivity extends AppCompatActivity {
         showConfirmation(localBookingId);
     }
 
-    /** Navigate to BookingConfirmationActivity, passing booking_id so the
-     *  flow can continue: Confirmation → Checklist → Dashboard. */
     private void showConfirmation(int bookingId) {
         Intent intent = new Intent(this, BookingConfirmationActivity.class);
         intent.putExtra("hostel_name", hostelName);
         intent.putExtra("room_number", roomNumber);
         intent.putExtra("check_in",    checkInDate);
         intent.putExtra("check_out",   checkOutDate);
-        intent.putExtra("booking_id",  bookingId);   // ← forwarded to checklist
+        intent.putExtra("booking_id",  bookingId);
         startActivity(intent);
         finish();
     }

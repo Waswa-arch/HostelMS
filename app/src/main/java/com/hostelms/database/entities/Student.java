@@ -8,4 +8,5 @@ public class Student {
     public int age, roomId, bedNumber;
     public long admissionDate;
     public double amountOwed;
+    public String hostelName, roomNumber, roomType; // denormalised for display
 }

@@ -21,11 +21,6 @@ import java.util.List;
 
 /**
  * NEW – Hostel list screen for Booking and Inquiry modules.
- * Mode is passed via Intent extra "mode" = "booking" | "inquiry".
- *
- * Navigation flow:
- *   Student Dashboard → HostelListActivity → HostelDetailActivity → BookRoomActivity
- *   Student Dashboard → HostelListActivity (inquiry mode – shows contact info)
  */
 public class HostelListActivity extends AppCompatActivity {
     private RecyclerView rv;

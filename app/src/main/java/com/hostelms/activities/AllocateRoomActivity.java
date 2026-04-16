@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.hostelms.R;
 import com.hostelms.database.AppDatabase;
 import com.hostelms.database.entities.*;
+import com.hostelms.utils.NotificationHelper;
 import java.util.List;
 
 public class AllocateRoomActivity extends AppCompatActivity {
@@ -48,10 +49,16 @@ public class AllocateRoomActivity extends AppCompatActivity {
             }
             int bed = etBed.getText().toString().isEmpty() ? 1 : Integer.parseInt(etBed.getText().toString());
             double owed = etOwed.getText().toString().isEmpty() ? r.pricePerSemester : Double.parseDouble(etOwed.getText().toString());
-            db.studentDao().assignRoom(s.id, r.id, bed);
+            
+            db.studentDao().assignRoom(s.id, r.id, bed, r.hostelName, r.roomNumber, r.roomType);
+
             s.amountOwed = owed; db.studentDao().update(s);
             db.roomDao().incrementOccupied(r.id);
             Toast.makeText(this, s.name + " allocated to " + r.hostelName + " Room " + r.roomNumber, Toast.LENGTH_LONG).show();
+
+            // Send push notification to the student
+            NotificationHelper.sendRoomAllocationNotification(
+                    this, s.name, r.hostelName, r.roomNumber, bed);
             rooms = db.roomDao().getAvailable();
             String[] rn = rooms.stream().map(ro -> ro.hostelName + " Room " + ro.roomNumber + " (" + ro.roomType + ") [" + ro.occupied + "/" + ro.capacity + "]").toArray(String[]::new);
             spRoom.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, rn));

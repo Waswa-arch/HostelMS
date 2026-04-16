@@ -4,48 +4,36 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_room_checklist.xml"
     },
     {
-        "merged": "com.hostelms.app-debug-38:/drawable-v24_hostel_acacia.xml.flat",
-        "source": "com.hostelms.app-main-40:/drawable-v24/hostel_acacia.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_student.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_student.xml"
-    },
-    {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_announcements.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_announcements.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_checkin.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_checkin.xml"
     },
     {
-        "merged": "com.hostelms.app-debug-38:/drawable-v24_chip_bg.xml.flat",
-        "source": "com.hostelms.app-main-40:/drawable-v24/chip_bg.xml"
-    },
-    {
-        "merged": "com.hostelms.app-debug-38:/drawable-v24_hostel_baobab.xml.flat",
-        "source": "com.hostelms.app-main-40:/drawable-v24/hostel_baobab.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_announcements.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_announcements.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_admin_dashboard.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_admin_dashboard.xml"
     },
     {
-        "merged": "com.hostelms.app-debug-38:/drawable-v24_gradient_image_overlay.xml.flat",
-        "source": "com.hostelms.app-main-40:/drawable-v24/gradient_image_overlay.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_check_in.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_check_in.xml"
     },
     {
-        "merged": "com.hostelms.app-debug-38:/layout_activity_booking.xml.flat",
-        "source": "com.hostelms.app-main-40:/layout/activity_booking.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_announcements_student.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_announcements_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_hostel_card.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_hostel_card.xml"
+    },
+    {
+        "merged": "com.hostelms.app-debug-38:/layout_activity_student_profile.xml.flat",
+        "source": "com.hostelms.app-main-40:/layout/activity_student_profile.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_login.xml.flat",
@@ -60,8 +48,8 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_add_edit_room.xml"
     },
     {
-        "merged": "com.hostelms.app-debug-38:/layout_item_hostel_card.xml.flat",
-        "source": "com.hostelms.app-main-40:/layout/item_hostel_card.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_notification.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\item_notification.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\menu_menu_student.xml.flat",
@@ -108,6 +96,10 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_booking.xml"
     },
     {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\drawable-v24_chip_bg.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\drawable-v24\\chip_bg.xml"
+    },
+    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_manage_rooms.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_manage_rooms.xml"
     },
@@ -116,8 +108,8 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_hostel_list.xml"
     },
     {
-        "merged": "com.hostelms.app-debug-38:/drawable-v24_badge_gender_bg.xml.flat",
-        "source": "com.hostelms.app-main-40:/drawable-v24/badge_gender_bg.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\drawable-v24_gradient_image_overlay.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\drawable-v24\\gradient_image_overlay.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_hostel.xml.flat",
@@ -130,6 +122,10 @@
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_attendance_report.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_attendance_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\drawable-v24_badge_gender_bg.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\drawable-v24\\badge_gender_bg.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_room_api.xml.flat",
@@ -152,8 +148,8 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_manage_complaints.xml"
     },
     {
-        "merged": "com.hostelms.app-debug-38:/drawable-v24_hostel_savanna.xml.flat",
-        "source": "com.hostelms.app-main-40:/drawable-v24/hostel_savanna.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\drawable-v24_hostel_savanna.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\drawable-v24\\hostel_savanna.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_complaints_admin.xml.flat",
@@ -166,6 +162,10 @@
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_allocate_room.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_allocate_room.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\drawable-v24_hostel_acacia.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\drawable-v24\\hostel_acacia.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_student_dashboard.xml.flat",
@@ -184,12 +184,12 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_manage_students.xml"
     },
     {
-        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_book_room.xml.flat",
-        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_book_room.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_student_profile.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_student_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_book_room.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_book_room.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_item_attendance.xml.flat",
@@ -222,6 +222,10 @@
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_activity_add_announcement.xml.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\layout\\activity_add_announcement.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\drawable-v24_hostel_baobab.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-main-40:\\drawable-v24\\hostel_baobab.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.13\\com.hostelms.app-debug-38:\\layout_row_info.xml.flat",

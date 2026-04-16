@@ -3259,6 +3259,7 @@ id cardBooking
 id cardCheckin
 id cardComplaints
 id cardFaq
+id cardHostelAssigned
 id cardHowToUse
 id cardInquiry
 id cardProfile
@@ -3516,6 +3517,7 @@ id noState
 id none
 id normal
 id north
+id noticesContent
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -3555,6 +3557,7 @@ id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
+id profileContent
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -3568,7 +3571,6 @@ id rightToLeft
 id right_icon
 id right_side
 id rounded
-id rowRegNo
 id row_index_key
 id rvAnnouncements
 id rvAttendance
@@ -3576,6 +3578,7 @@ id rvChecklist
 id rvComplaints
 id rvHostels
 id rvMyComplaints
+id rvNotices
 id rvRooms
 id rvStudents
 id save_non_transition_alpha
@@ -3654,6 +3657,8 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id tabMode
+id tabNotices
+id tabProfile
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -3702,6 +3707,7 @@ id transition_transform
 id triangle
 id tvAdmission
 id tvAge
+id tvAllocateStatus
 id tvAmenities
 id tvAuthor
 id tvAvailableRooms
@@ -3722,7 +3728,10 @@ id tvEmoji
 id tvGender
 id tvGenderBadge
 id tvHostel
+id tvHostelDetail
 id tvHostelName
+id tvHostelStatus
+id tvIcon
 id tvItemLabel
 id tvItemStatus
 id tvLabel
@@ -3730,6 +3739,8 @@ id tvLocation
 id tvLogin
 id tvLoginTitle
 id tvName
+id tvNoNotices
+id tvNoticeBadge
 id tvOccupied
 id tvOpenComplaints
 id tvOwed
@@ -3753,6 +3764,8 @@ id tvStep2Title
 id tvStudent
 id tvStudentName
 id tvSubject
+id tvTabNotices
+id tvTabProfile
 id tvTileIcon
 id tvTileLabel
 id tvTime
@@ -3968,6 +3981,7 @@ layout item_checklist_row
 layout item_complaint
 layout item_hostel
 layout item_hostel_card
+layout item_notification
 layout item_room_admin
 layout item_room_api
 layout item_room_book

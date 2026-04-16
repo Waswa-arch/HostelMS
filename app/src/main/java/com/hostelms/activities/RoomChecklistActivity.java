@@ -13,38 +13,22 @@ import com.hostelms.api.ApiConfig;
 import com.hostelms.database.AppDatabase;
 import com.hostelms.database.entities.Booking;
 import com.hostelms.utils.SessionManager;
-import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
  * RoomChecklistActivity – shown immediately after booking confirmation.
- *
- * Flow:
- *   BookRoomActivity
- *     → BookingConfirmationActivity   (summary: hostel, room, dates)
- *       → RoomChecklistActivity        ← THIS SCREEN
- *         → StudentDashboardActivity   (after checklist submit)
- *
- * The student checks off every item in their room. The result is:
- *   - Saved to the local Room DB (marks the booking as checked-in)
- *   - Posted to submit_checklist.php on the API (optional; graceful if unreachable)
- *
- * Items list matches the spec: Bed, Broom, Room Key, Bulb, plus the
- * extended items already present in the existing CheckInActivity.
  */
 public class RoomChecklistActivity extends AppCompatActivity {
 
     // ── Checklist items ──────────────────────────────────────────────────────
-    // Spec-required items are first; remaining come from the original CheckInActivity.
     private static final ChecklistItem[] ITEMS = {
-        // ── Core spec items ──────────────────────────────────────────────
         new ChecklistItem("🛏️",  "Bed",                    true),
         new ChecklistItem("🧹",  "Broom",                  true),
         new ChecklistItem("🔑",  "Room Key",               true),
         new ChecklistItem("💡",  "Bulb (working)",         true),
-        // ── Extended items (retained from existing CheckInActivity) ──────
         new ChecklistItem("🛏️",  "Mattress",               false),
         new ChecklistItem("🪑",  "Study Chair",            false),
         new ChecklistItem("📚",  "Study Desk",             false),
@@ -63,13 +47,11 @@ public class RoomChecklistActivity extends AppCompatActivity {
         }
     }
 
-    // ── View references ──────────────────────────────────────────────────────
     private CheckBox[]  checkBoxes;
     private TextView[]  tvStatus;
     private AppDatabase db;
     private SessionManager sm;
 
-    // ── Booking context passed from BookingConfirmationActivity ──────────────
     private String hostelName, roomNumber, checkIn, checkOut;
     private int    bookingId;
 
@@ -81,7 +63,6 @@ public class RoomChecklistActivity extends AppCompatActivity {
         db = AppDatabase.getInstance(this);
         sm = new SessionManager(this);
 
-        // Receive context from BookingConfirmationActivity
         hostelName = getIntent().getStringExtra("hostel_name");
         roomNumber = getIntent().getStringExtra("room_number");
         checkIn    = getIntent().getStringExtra("check_in");
@@ -91,18 +72,15 @@ public class RoomChecklistActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false); // no back during checklist
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setTitle("Room Inspection");
         }
 
-        // Populate room context header
         ((TextView) findViewById(R.id.tvRoomContext))
                 .setText(hostelName + "  ·  Room " + roomNumber);
 
-        // Progress tracking
         TextView tvProgress = findViewById(R.id.tvProgress);
 
-        // Build the checklist dynamically into the container
         LinearLayout container = findViewById(R.id.checklistContainer);
         checkBoxes = new CheckBox[ITEMS.length];
         tvStatus   = new TextView[ITEMS.length];
@@ -114,14 +92,10 @@ public class RoomChecklistActivity extends AppCompatActivity {
             View row = LayoutInflater.from(this)
                     .inflate(R.layout.item_room_checklist, container, false);
 
-            // Emoji icon
             ((TextView) row.findViewById(R.id.tvEmoji)).setText(item.emoji);
-
-            // Label
             TextView tvLabel = row.findViewById(R.id.tvItemLabel);
             tvLabel.setText(item.label);
 
-            // Required badge
             TextView tvRequired = row.findViewById(R.id.tvRequired);
             if (item.isRequired) {
                 tvRequired.setVisibility(View.VISIBLE);
@@ -130,12 +104,10 @@ public class RoomChecklistActivity extends AppCompatActivity {
                 tvRequired.setVisibility(View.GONE);
             }
 
-            // Status chip (changes when ticked)
             tvStatus[idx] = row.findViewById(R.id.tvItemStatus);
             tvStatus[idx].setText("Not checked");
             tvStatus[idx].setTextColor(Color.parseColor("#EF4444"));
 
-            // Checkbox
             checkBoxes[idx] = row.findViewById(R.id.cbItem);
             checkBoxes[idx].setOnCheckedChangeListener((btn, checked) -> {
                 tvStatus[idx].setText(checked ? "✓ Available" : "Not checked");
@@ -150,15 +122,11 @@ public class RoomChecklistActivity extends AppCompatActivity {
 
         updateProgress(tvProgress);
 
-        // "Select All" / "Clear All" toggles
         findViewById(R.id.btnSelectAll).setOnClickListener(v -> setAll(true,  tvProgress));
         findViewById(R.id.btnClearAll) .setOnClickListener(v -> setAll(false, tvProgress));
 
-        // Submit
         findViewById(R.id.btnSubmitChecklist).setOnClickListener(v -> submitChecklist());
     }
-
-    // ── Helpers ──────────────────────────────────────────────────────────────
 
     private void updateProgress(TextView tvProgress) {
         int checked  = countChecked();
@@ -191,7 +159,6 @@ public class RoomChecklistActivity extends AppCompatActivity {
     }
 
     private void submitChecklist() {
-        // Enforce all required items
         StringBuilder missing = new StringBuilder();
         for (int i = 0; i < ITEMS.length; i++) {
             if (ITEMS[i].isRequired && !checkBoxes[i].isChecked()) {
@@ -214,7 +181,6 @@ public class RoomChecklistActivity extends AppCompatActivity {
     private void finalise() {
         int confirmed = countChecked();
 
-        // Build a summary string of which items were available
         StringBuilder summary = new StringBuilder();
         for (int i = 0; i < ITEMS.length; i++) {
             summary.append(ITEMS[i].label)
@@ -223,7 +189,6 @@ public class RoomChecklistActivity extends AppCompatActivity {
                    .append("\n");
         }
 
-        // ── 1. Mark booking as checked-in in local Room DB ────────────────
         if (bookingId != -1) {
             Booking b = db.bookingDao().getById(bookingId);
             if (b != null) {
@@ -232,7 +197,6 @@ public class RoomChecklistActivity extends AppCompatActivity {
                 db.bookingDao().update(b);
             }
         } else {
-            // Fallback: find the latest unconfirmed booking for this student
             List<Booking> bookings = db.bookingDao().getByStudent(sm.getUserId());
             for (Booking b : bookings) {
                 if (!b.checkInDone) {
@@ -244,7 +208,6 @@ public class RoomChecklistActivity extends AppCompatActivity {
             }
         }
 
-        // ── 2. Post to API (fire-and-forget; failure doesn't block the user) ──
         Map<String, String> params = new HashMap<>();
         params.put("student_id",    String.valueOf(sm.getUserId()));
         params.put("booking_id",    String.valueOf(bookingId));
@@ -253,11 +216,10 @@ public class RoomChecklistActivity extends AppCompatActivity {
         params.put("summary",       summary.toString());
 
         ApiClient.post(this, ApiConfig.SUBMIT_CHECKLIST, params, new ApiClient.Callback() {
-            @Override public void onSuccess(String r) { /* logged silently */ }
-            @Override public void onError(String e)   { /* ignored – local save already done */ }
+            @Override public void onSuccess(String r) { }
+            @Override public void onError(String e)   { }
         });
 
-        // ── 3. Show success and navigate home ─────────────────────────────
         Toast.makeText(this,
                 "Check-in complete! " + confirmed + "/" + ITEMS.length + " items confirmed.",
                 Toast.LENGTH_LONG).show();
@@ -267,7 +229,6 @@ public class RoomChecklistActivity extends AppCompatActivity {
         finish();
     }
 
-    // Disable back-press during checklist so students can't skip it
     @Override
     public void onBackPressed() {
         new android.app.AlertDialog.Builder(this)

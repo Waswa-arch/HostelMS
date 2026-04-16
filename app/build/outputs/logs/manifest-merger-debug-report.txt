@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:2:1-69:12
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:2:1-70:12
+INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:2:1-70:12
+INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:2:1-70:12
+INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:2:1-70:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\user\.gradle\caches\8.13\transforms\599a5935c2166e8e0b398a0aed9a2d82\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\user\.gradle\caches\8.13\transforms\7eb027e7305127024cd5dad21ffe3a42\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\user\.gradle\caches\8.13\transforms\7011d89884e6a3063a6ce55edd9f882f\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -77,17 +77,21 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\user\.gradle
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\user\.gradle\caches\8.13\transforms\784103a80b8bfc22377175428c72406b\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
 	android:name
 		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:7:22-62
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:8:5-76
+	android:name
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:8:22-74
 uses-feature#android.hardware.camera
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:8:5-84
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:9:5-84
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\user\.gradle\caches\8.13\transforms\784103a80b8bfc22377175428c72406b\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\user\.gradle\caches\8.13\transforms\784103a80b8bfc22377175428c72406b\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
 	android:required
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:8:58-82
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:9:58-82
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:8:19-57
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:9:19-57
 application
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:10:5-68:19
-INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:10:5-68:19
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:11:5-69:19
+INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:11:5-69:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\user\.gradle\caches\8.13\transforms\599a5935c2166e8e0b398a0aed9a2d82\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\user\.gradle\caches\8.13\transforms\599a5935c2166e8e0b398a0aed9a2d82\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\user\.gradle\caches\8.13\transforms\7eb027e7305127024cd5dad21ffe3a42\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -115,195 +119,195 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\us
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\user\.gradle\caches\8.13\transforms\00eeb73d329f60914ee7cf1a9183d8d3\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:13:9-41
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:14:9-41
 	android:roundIcon
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:15:9-54
 	android:icon
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:16:9-46
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:17:9-46
 	android:usesCleartextTraffic
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:17:9-44
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:18:9-44
 activity#com.hostelms.activities.SplashActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:20:9-28:20
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:21:9-29:20
 	android:noHistory
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:22:13-37
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:23:13-37
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:22:13-36
 	android:theme
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:23:13-57
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:24:13-57
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:20:19-60
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:21:19-60
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:24:13-27:29
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:25:13-28:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:25:17-68
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:26:17-68
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:26:17-76
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:27:17-76
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:27:27-74
 activity#com.hostelms.activities.RoleSelectActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:31:9-91
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:32:9-91
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:31:65-89
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:32:65-89
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:31:19-64
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:32:19-64
 activity#com.hostelms.activities.RegisterActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:32:9-89
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:33:9-89
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:32:63-87
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:33:63-87
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:32:19-62
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:33:19-62
 activity#com.hostelms.activities.LoginActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:33:9-86
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:34:9-86
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:33:60-84
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:34:60-84
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:33:19-59
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:34:19-59
 activity#com.hostelms.activities.StudentDashboardActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:36:9-97
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:37:9-97
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:36:71-95
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:37:71-95
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:36:19-70
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:37:19-70
 activity#com.hostelms.activities.StudentProfileActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:37:9-95
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:38:9-95
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:37:69-93
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:38:69-93
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:37:19-68
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:38:19-68
 activity#com.hostelms.activities.QrScanActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:38:9-87
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:39:9-87
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:38:61-85
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:39:61-85
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:38:19-60
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:39:19-60
 activity#com.hostelms.activities.CheckInActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:39:9-88
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:40:9-88
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:39:62-86
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:40:62-86
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:39:19-61
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:40:19-61
 activity#com.hostelms.activities.ComplaintActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:40:9-90
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:41:9-90
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:40:64-88
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:41:64-88
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:40:19-63
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:41:19-63
 activity#com.hostelms.activities.AnnouncementsActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:41:9-94
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:42:9-94
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:41:68-92
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:42:68-92
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:41:19-67
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:42:19-67
 activity#com.hostelms.activities.HostelListActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:44:9-91
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:45:9-91
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:44:65-89
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:45:65-89
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:44:19-64
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:45:19-64
 activity#com.hostelms.activities.HostelDetailActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:45:9-93
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:46:9-93
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:45:67-91
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:46:67-91
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:45:19-66
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:46:19-66
 activity#com.hostelms.activities.BookRoomActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:46:9-89
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:47:9-89
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:46:63-87
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:47:63-87
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:46:19-62
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:47:19-62
 activity#com.hostelms.activities.BookingConfirmationActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:47:9-100
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:48:9-100
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:47:74-98
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:48:74-98
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:47:19-73
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:48:19-73
 activity#com.hostelms.activities.RoomChecklistActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:50:9-94
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:51:9-94
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:50:68-92
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:51:68-92
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:50:19-67
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:51:19-67
 activity#com.hostelms.activities.FaqActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:53:9-84
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:54:9-84
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:53:58-82
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:54:58-82
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:53:19-57
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:54:19-57
 activity#com.hostelms.activities.HowToUseActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:54:9-89
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:55:9-89
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:54:63-87
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:55:63-87
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:54:19-62
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:55:19-62
 activity#com.hostelms.activities.AdminDashboardActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:57:9-95
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:58:9-95
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:57:69-93
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:58:69-93
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:57:19-68
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:58:19-68
 activity#com.hostelms.activities.ManageRoomsActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:58:9-92
-	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:58:66-90
-	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:58:19-65
-activity#com.hostelms.activities.AddEditRoomActivity
 ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:59:9-92
 	android:exported
 		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:59:66-90
 	android:name
 		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:59:19-65
-activity#com.hostelms.activities.ManageStudentsActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:60:9-95
+activity#com.hostelms.activities.AddEditRoomActivity
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:60:9-92
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:60:69-93
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:60:66-90
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:60:19-68
-activity#com.hostelms.activities.AddEditStudentActivity
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:60:19-65
+activity#com.hostelms.activities.ManageStudentsActivity
 ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:61:9-95
 	android:exported
 		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:61:69-93
 	android:name
 		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:61:19-68
-activity#com.hostelms.activities.AttendanceReportActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:62:9-97
+activity#com.hostelms.activities.AddEditStudentActivity
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:62:9-95
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:62:71-95
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:62:69-93
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:62:19-70
-activity#com.hostelms.activities.ManageComplaintsActivity
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:62:19-68
+activity#com.hostelms.activities.AttendanceReportActivity
 ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:63:9-97
 	android:exported
 		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:63:71-95
 	android:name
 		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:63:19-70
+activity#com.hostelms.activities.ManageComplaintsActivity
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:64:9-97
+	android:exported
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:64:71-95
+	android:name
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:64:19-70
 activity#com.hostelms.activities.AddAnnouncementActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:64:9-96
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:65:9-96
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:64:70-94
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:65:70-94
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:64:19-69
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:65:19-69
 activity#com.hostelms.activities.QrGenerateActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:65:9-91
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:66:9-91
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:65:65-89
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:66:65-89
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:65:19-64
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:66:19-64
 activity#com.hostelms.activities.AllocateRoomActivity
-ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:66:9-93
+ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:67:9-93
 	android:exported
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:66:67-91
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:67:67-91
 	android:name
-		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:66:19-66
+		ADDED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml:67:19-66
 uses-sdk
 INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\user\Desktop\HostelMS_Refactored\app\src\main\AndroidManifest.xml

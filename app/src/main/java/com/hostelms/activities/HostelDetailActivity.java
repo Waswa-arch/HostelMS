@@ -23,9 +23,6 @@ import java.util.List;
 
 /**
  * NEW – Hostel detail screen.
- * Shows image, description, person-in-charge, contact, and available rooms.
- * In "booking" mode, tapping a room navigates to BookRoomActivity.
- * In "inquiry" mode, contact details are prominent and no booking button shown.
  */
 public class HostelDetailActivity extends AppCompatActivity {
     private int hostelId;
@@ -72,7 +69,6 @@ public class HostelDetailActivity extends AppCompatActivity {
                     JSONObject json = new JSONObject(response);
                     JSONObject hostel = json.getJSONObject("hostel");
 
-                    // Populate header
                     ((TextView) findViewById(R.id.tvHostelName)).setText(hostel.optString("name"));
                     ((TextView) findViewById(R.id.tvDescription)).setText(hostel.optString("description"));
                     ((TextView) findViewById(R.id.tvPersonInCharge))
@@ -85,7 +81,6 @@ public class HostelDetailActivity extends AppCompatActivity {
                             .placeholder(android.R.drawable.ic_menu_gallery)
                             .into((ImageView) findViewById(R.id.ivHostelImage));
 
-                    // Populate rooms
                     List<HostelRoom> rooms = new ArrayList<>();
                     JSONArray arr = json.getJSONArray("rooms");
                     for (int i = 0; i < arr.length(); i++) {

@@ -6,27 +6,20 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import com.hostelms.R;
 import com.hostelms.utils.SeedData;
-import com.hostelms.utils.SessionManager;
 
 public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        // Seed local database with demo data if empty
         SeedData.seedIfEmpty(this);
 
+        // Always go to RoleSelect — never skip login
         new Handler().postDelayed(() -> {
-            SessionManager sm = new SessionManager(this);
-            Intent intent;
-            if (sm.isLoggedIn()) {
-                intent = "admin".equals(sm.getRole())
-                    ? new Intent(this, AdminDashboardActivity.class)
-                    : new Intent(this, StudentDashboardActivity.class);
-            } else {
-                intent = new Intent(this, RoleSelectActivity.class);
-            }
-            startActivity(intent);
+            startActivity(new Intent(this, RoleSelectActivity.class));
             finish();
-        }, 2000);
+        }, 1800);
     }
 }

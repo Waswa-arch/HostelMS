@@ -1,9 +1,7 @@
 package com.hostelms.database;
 
 import android.content.Context;
-import androidx.room.Database;
-import androidx.room.RoomDatabase;
-
+import androidx.room.*;
 import com.hostelms.database.dao.*;
 import com.hostelms.database.entities.*;
 
@@ -11,12 +9,13 @@ import com.hostelms.database.entities.*;
     entities = {
         Student.class, 
         com.hostelms.database.entities.Room.class, 
-        Complaint.class, 
+        Complaint.class,
         Announcement.class, 
-        Attendance.class, 
-        Booking.class
+        Booking.class, 
+        StudentNotification.class,
+        Attendance.class
     },
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 public abstract class AppDatabase extends RoomDatabase {
@@ -26,14 +25,16 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract RoomDao roomDao();
     public abstract ComplaintDao complaintDao();
     public abstract AnnouncementDao announcementDao();
-    public abstract AttendanceDao attendanceDao();
     public abstract BookingDao bookingDao();
+    public abstract NotificationDao notificationDao();
+    public abstract AttendanceDao attendanceDao();
 
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (AppDatabase.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = androidx.room.Room.databaseBuilder(context.getApplicationContext(),
+                    INSTANCE = androidx.room.Room.databaseBuilder(
+                            context.getApplicationContext(),
                             AppDatabase.class, "hostelms.db")
                         .fallbackToDestructiveMigration()
                         .allowMainThreadQueries()

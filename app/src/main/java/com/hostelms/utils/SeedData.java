@@ -3,6 +3,7 @@ package com.hostelms.utils;
 import android.content.Context;
 import com.hostelms.database.AppDatabase;
 import com.hostelms.database.entities.*;
+import java.util.List;
 
 public class SeedData {
     public static void seedIfEmpty(Context context) {
@@ -19,24 +20,51 @@ public class SeedData {
             db.studentDao().insert(admin);
         }
 
-        // Seed rooms
-        if (db.roomDao().getAll().isEmpty()) {
-            String[][] rooms = {
-                {"Baobab Hall","101","Single","1","15000","Male","Available"},
-                {"Baobab Hall","102","Double","2","10000","Male","Available"},
-                {"Baobab Hall","103","Quad","4","7500","Mixed","Available"},
-                {"Acacia House","201","Single","1","17000","Female","Available"},
-                {"Acacia House","202","Double","2","12000","Female","Available"},
-                {"Savanna Block","301","Single","1","13000","Male","Available"},
-                {"Savanna Block","302","Quad","4","7000","Male","Available"},
-            };
-            for (String[] r : rooms) {
-                Room room = new Room();
-                room.hostelName = r[0]; room.roomNumber = r[1]; room.roomType = r[2];
-                room.capacity = Integer.parseInt(r[3]); room.pricePerSemester = Double.parseDouble(r[4]);
-                room.gender = r[5]; room.status = r[6]; room.occupied = 0;
-                room.amenities = "Wi-Fi, Laundry, Security";
-                db.roomDao().insert(room);
+        // Check if we need to upgrade from the old 7-room seed to the new 300-room seed
+        List<Room> existingRooms = db.roomDao().getAll();
+        if (existingRooms.size() < 100) {
+            // If we have very few rooms (like the old seed), clear them to allow fresh 300-room seed
+            for (Room r : existingRooms) {
+                db.roomDao().delete(r);
+            }
+            
+            String[] hostels = {"Baobab Hall", "Acacia House", "Savanna Block"};
+            String[] genders = {"Male", "Female", "Male"};
+            double[] prices = {15000, 17000, 13000};
+            
+            for (int h = 0; h < hostels.length; h++) {
+                String hostelName = hostels[h];
+                String gender = genders[h];
+                double price = prices[h];
+                
+                for (int i = 1; i <= 100; i++) {
+                    Room room = new Room();
+                    room.hostelName = hostelName;
+                    room.roomNumber = String.valueOf(100 + i);
+                    
+                    if (i % 3 == 0) {
+                        room.roomType = "Single";
+                        room.capacity = 1;
+                        room.pricePerSemester = price;
+                    } else if (i % 3 == 1) {
+                        room.roomType = "Double";
+                        room.capacity = 2;
+                        room.pricePerSemester = price * 0.7;
+                    } else {
+                        room.roomType = "Quad";
+                        room.capacity = 4;
+                        room.pricePerSemester = price * 0.5;
+                    }
+                    
+                    room.gender = gender;
+                    // ENSURE NO ROOM IS FULL: 
+                    // Set occupied to 0 and status to Available
+                    room.status = "Available";
+                    room.occupied = 0; 
+
+                    room.amenities = "Wi-Fi, Laundry, Security";
+                    db.roomDao().insert(room);
+                }
             }
         }
 

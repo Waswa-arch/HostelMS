@@ -20,16 +20,14 @@ public class HostelAdapter extends RecyclerView.Adapter<HostelAdapter.VH> {
     private final String mode;
     private final OnHostelClick listener;
 
-    // Image resources mapped by hostel name keyword (fallback)
     private static int getHostelImage(String name) {
         if (name == null) return R.drawable.hostel_baobab;
         String lower = name.toLowerCase();
         if (lower.contains("acacia"))  return R.drawable.hostel_acacia;
         if (lower.contains("savanna")) return R.drawable.hostel_savanna;
-        return R.drawable.hostel_baobab; // default
+        return R.drawable.hostel_baobab;
     }
 
-    // Distance text per hostel
     private static String getDistance(String name) {
         if (name == null) return "📍 200m from main campus";
         String lower = name.toLowerCase();
@@ -38,7 +36,6 @@ public class HostelAdapter extends RecyclerView.Adapter<HostelAdapter.VH> {
         return "📍 200m from main campus";
     }
 
-    // Description per hostel (fallback)
     private static String getDescription(String name) {
         if (name == null) return "Quiet study environment.";
         String lower = name.toLowerCase();
@@ -65,7 +62,6 @@ public class HostelAdapter extends RecyclerView.Adapter<HostelAdapter.VH> {
         Hostel hostel = hostels.get(pos);
         Context ctx = h.itemView.getContext();
 
-        // Image
         if (hostel.imageUrl != null && !hostel.imageUrl.isEmpty()) {
             Glide.with(ctx)
                     .load(hostel.imageUrl)
@@ -75,20 +71,17 @@ public class HostelAdapter extends RecyclerView.Adapter<HostelAdapter.VH> {
             h.ivImage.setImageResource(getHostelImage(hostel.name));
         }
 
-        // Text
         h.tvName.setText(hostel.name);
         h.tvDistance.setText(getDistance(hostel.name));
         h.tvDescription.setText(hostel.description != null && !hostel.description.isEmpty() 
                 ? hostel.description : getDescription(hostel.name));
 
-        // Gender badge from rooms
         AppDatabase db = AppDatabase.getInstance(ctx);
         List<Room> rooms = db.roomDao().getByHostel(hostel.name);
         String gender = "Mixed";
         if (!rooms.isEmpty()) gender = rooms.get(0).gender;
         h.tvGender.setText(gender);
 
-        // Lowest price
         double minPrice = Double.MAX_VALUE;
         for (Room r : rooms) {
             if (r.pricePerSemester < minPrice) minPrice = r.pricePerSemester;
@@ -97,7 +90,6 @@ public class HostelAdapter extends RecyclerView.Adapter<HostelAdapter.VH> {
                 ? "KES " + String.format("%,.0f", minPrice) + "/sem"
                 : "See rooms");
 
-        // Amenity chips — derive from rooms or use defaults
         h.llAmenities.removeAllViews();
         String[] chips;
         String lower = hostel.name != null ? hostel.name.toLowerCase() : "";

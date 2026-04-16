@@ -1,6 +1,8 @@
 package com.hostelms.activities;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import com.hostelms.R;
 import com.hostelms.database.AppDatabase;
 import com.hostelms.database.entities.Student;
@@ -15,12 +19,6 @@ import com.hostelms.utils.SessionManager;
 
 /**
  * REFACTORED from original StudentDashboardActivity.
- *
- * Changes made:
- *  - Booking card now goes to HostelListActivity (API-driven hostel list).
- *  - Added Inquiry card → HostelListActivity (mode=inquiry).
- *  - Added FAQ and HowToUse cards.
- *  - Retained: CheckIn, Complaints, Announcements, QR Scan, Profile.
  */
 public class StudentDashboardActivity extends AppCompatActivity {
     private SessionManager sm;
@@ -34,6 +32,16 @@ public class StudentDashboardActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Request notification permission on Android 13+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this,
+                    android.Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 100);
+            }
+        }
+
         TextView tvWelcome = findViewById(R.id.tvWelcome);
         TextView tvRegNo   = findViewById(R.id.tvRegNo);
         Student student = AppDatabase.getInstance(this).studentDao().getById(sm.getUserId());
@@ -42,8 +50,6 @@ public class StudentDashboardActivity extends AppCompatActivity {
             tvRegNo.setText(student.regNumber);
         }
 
-        // ── Card → Activity mapping ──────────────────────────────────────
-        // Booking: goes to API hostel list
         CardView cardBooking = findViewById(R.id.cardBooking);
         if (cardBooking != null) cardBooking.setOnClickListener(v -> {
             Intent i = new Intent(this, HostelListActivity.class);
@@ -51,7 +57,6 @@ public class StudentDashboardActivity extends AppCompatActivity {
             startActivity(i);
         });
 
-        // Inquiry: goes to hostel list in inquiry mode
         CardView cardInquiry = findViewById(R.id.cardInquiry);
         if (cardInquiry != null) cardInquiry.setOnClickListener(v -> {
             Intent i = new Intent(this, HostelListActivity.class);
@@ -59,27 +64,22 @@ public class StudentDashboardActivity extends AppCompatActivity {
             startActivity(i);
         });
 
-        // Complaints
         CardView cardComplaints = findViewById(R.id.cardComplaints);
         if (cardComplaints != null) cardComplaints.setOnClickListener(v ->
                 startActivity(new Intent(this, ComplaintActivity.class)));
 
-        // Announcements
         CardView cardAnnouncements = findViewById(R.id.cardAnnouncements);
         if (cardAnnouncements != null) cardAnnouncements.setOnClickListener(v ->
                 startActivity(new Intent(this, AnnouncementsActivity.class)));
 
-        // FAQ
         CardView cardFaq = findViewById(R.id.cardFaq);
         if (cardFaq != null) cardFaq.setOnClickListener(v ->
                 startActivity(new Intent(this, FaqActivity.class)));
 
-        // How to Use
         CardView cardHowToUse = findViewById(R.id.cardHowToUse);
         if (cardHowToUse != null) cardHowToUse.setOnClickListener(v ->
                 startActivity(new Intent(this, HowToUseActivity.class)));
 
-        // Retained original cards
         CardView cardCheckin = findViewById(R.id.cardCheckin);
         if (cardCheckin != null) cardCheckin.setOnClickListener(v ->
                 startActivity(new Intent(this, CheckInActivity.class)));

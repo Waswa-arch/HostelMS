@@ -1,6 +1,5 @@
 package com.hostelms.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;

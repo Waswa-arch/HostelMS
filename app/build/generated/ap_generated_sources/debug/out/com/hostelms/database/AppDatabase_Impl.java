@@ -19,6 +19,8 @@ import com.hostelms.database.dao.BookingDao;
 import com.hostelms.database.dao.BookingDao_Impl;
 import com.hostelms.database.dao.ComplaintDao;
 import com.hostelms.database.dao.ComplaintDao_Impl;
+import com.hostelms.database.dao.NotificationDao;
+import com.hostelms.database.dao.NotificationDao_Impl;
 import com.hostelms.database.dao.RoomDao;
 import com.hostelms.database.dao.RoomDao_Impl;
 import com.hostelms.database.dao.StudentDao;
@@ -46,24 +48,27 @@ public final class AppDatabase_Impl extends AppDatabase {
 
   private volatile AnnouncementDao _announcementDao;
 
-  private volatile AttendanceDao _attendanceDao;
-
   private volatile BookingDao _bookingDao;
+
+  private volatile NotificationDao _notificationDao;
+
+  private volatile AttendanceDao _attendanceDao;
 
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `students` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `gender` TEXT, `course` TEXT, `regNumber` TEXT, `email` TEXT, `password` TEXT, `phone` TEXT, `role` TEXT, `profilePhotoPath` TEXT, `age` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `bedNumber` INTEGER NOT NULL, `admissionDate` INTEGER NOT NULL, `amountOwed` REAL NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `students` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `gender` TEXT, `course` TEXT, `regNumber` TEXT, `email` TEXT, `password` TEXT, `phone` TEXT, `role` TEXT, `profilePhotoPath` TEXT, `age` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `bedNumber` INTEGER NOT NULL, `admissionDate` INTEGER NOT NULL, `amountOwed` REAL NOT NULL, `hostelName` TEXT, `roomNumber` TEXT, `roomType` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `rooms` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `hostelName` TEXT, `roomNumber` TEXT, `roomType` TEXT, `amenities` TEXT, `status` TEXT, `gender` TEXT, `capacity` INTEGER NOT NULL, `occupied` INTEGER NOT NULL, `pricePerSemester` REAL NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `complaints` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `studentId` INTEGER NOT NULL, `studentName` TEXT, `category` TEXT, `subject` TEXT, `description` TEXT, `priority` TEXT, `status` TEXT, `adminResponse` TEXT, `dateSubmitted` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `announcements` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT, `body` TEXT, `author` TEXT, `isUrgent` INTEGER NOT NULL, `datePosted` INTEGER NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `attendance` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `studentId` INTEGER NOT NULL, `studentName` TEXT, `location` TEXT, `type` TEXT, `timestamp` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `bookings` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `studentId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `hostelName` TEXT, `roomNumber` TEXT, `roomType` TEXT, `mealBundle` TEXT, `status` TEXT, `totalPrice` REAL NOT NULL, `bookingDate` INTEGER NOT NULL, `checkInDone` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `notifications` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `studentId` INTEGER NOT NULL, `title` TEXT, `body` TEXT, `type` TEXT, `isRead` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `attendance` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `studentId` INTEGER NOT NULL, `studentName` TEXT, `location` TEXT, `type` TEXT, `timestamp` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '49c8c4403e9b3af24f6560dbbf498f64')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c2c8852621771572cd4a32b4749de66e')");
       }
 
       @Override
@@ -72,8 +77,9 @@ public final class AppDatabase_Impl extends AppDatabase {
         db.execSQL("DROP TABLE IF EXISTS `rooms`");
         db.execSQL("DROP TABLE IF EXISTS `complaints`");
         db.execSQL("DROP TABLE IF EXISTS `announcements`");
-        db.execSQL("DROP TABLE IF EXISTS `attendance`");
         db.execSQL("DROP TABLE IF EXISTS `bookings`");
+        db.execSQL("DROP TABLE IF EXISTS `notifications`");
+        db.execSQL("DROP TABLE IF EXISTS `attendance`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -117,7 +123,7 @@ public final class AppDatabase_Impl extends AppDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsStudents = new HashMap<String, TableInfo.Column>(15);
+        final HashMap<String, TableInfo.Column> _columnsStudents = new HashMap<String, TableInfo.Column>(18);
         _columnsStudents.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsStudents.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsStudents.put("gender", new TableInfo.Column("gender", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -133,6 +139,9 @@ public final class AppDatabase_Impl extends AppDatabase {
         _columnsStudents.put("bedNumber", new TableInfo.Column("bedNumber", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsStudents.put("admissionDate", new TableInfo.Column("admissionDate", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsStudents.put("amountOwed", new TableInfo.Column("amountOwed", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("hostelName", new TableInfo.Column("hostelName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("roomNumber", new TableInfo.Column("roomNumber", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsStudents.put("roomType", new TableInfo.Column("roomType", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysStudents = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesStudents = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoStudents = new TableInfo("students", _columnsStudents, _foreignKeysStudents, _indicesStudents);
@@ -198,22 +207,6 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoAnnouncements + "\n"
                   + " Found:\n" + _existingAnnouncements);
         }
-        final HashMap<String, TableInfo.Column> _columnsAttendance = new HashMap<String, TableInfo.Column>(6);
-        _columnsAttendance.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsAttendance.put("studentId", new TableInfo.Column("studentId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsAttendance.put("studentName", new TableInfo.Column("studentName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsAttendance.put("location", new TableInfo.Column("location", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsAttendance.put("type", new TableInfo.Column("type", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsAttendance.put("timestamp", new TableInfo.Column("timestamp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        final HashSet<TableInfo.ForeignKey> _foreignKeysAttendance = new HashSet<TableInfo.ForeignKey>(0);
-        final HashSet<TableInfo.Index> _indicesAttendance = new HashSet<TableInfo.Index>(0);
-        final TableInfo _infoAttendance = new TableInfo("attendance", _columnsAttendance, _foreignKeysAttendance, _indicesAttendance);
-        final TableInfo _existingAttendance = TableInfo.read(db, "attendance");
-        if (!_infoAttendance.equals(_existingAttendance)) {
-          return new RoomOpenHelper.ValidationResult(false, "attendance(com.hostelms.database.entities.Attendance).\n"
-                  + " Expected:\n" + _infoAttendance + "\n"
-                  + " Found:\n" + _existingAttendance);
-        }
         final HashMap<String, TableInfo.Column> _columnsBookings = new HashMap<String, TableInfo.Column>(11);
         _columnsBookings.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsBookings.put("studentId", new TableInfo.Column("studentId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -235,9 +228,42 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoBookings + "\n"
                   + " Found:\n" + _existingBookings);
         }
+        final HashMap<String, TableInfo.Column> _columnsNotifications = new HashMap<String, TableInfo.Column>(7);
+        _columnsNotifications.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("studentId", new TableInfo.Column("studentId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("title", new TableInfo.Column("title", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("body", new TableInfo.Column("body", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("type", new TableInfo.Column("type", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("isRead", new TableInfo.Column("isRead", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsNotifications.put("timestamp", new TableInfo.Column("timestamp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysNotifications = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesNotifications = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoNotifications = new TableInfo("notifications", _columnsNotifications, _foreignKeysNotifications, _indicesNotifications);
+        final TableInfo _existingNotifications = TableInfo.read(db, "notifications");
+        if (!_infoNotifications.equals(_existingNotifications)) {
+          return new RoomOpenHelper.ValidationResult(false, "notifications(com.hostelms.database.entities.StudentNotification).\n"
+                  + " Expected:\n" + _infoNotifications + "\n"
+                  + " Found:\n" + _existingNotifications);
+        }
+        final HashMap<String, TableInfo.Column> _columnsAttendance = new HashMap<String, TableInfo.Column>(6);
+        _columnsAttendance.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendance.put("studentId", new TableInfo.Column("studentId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendance.put("studentName", new TableInfo.Column("studentName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendance.put("location", new TableInfo.Column("location", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendance.put("type", new TableInfo.Column("type", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsAttendance.put("timestamp", new TableInfo.Column("timestamp", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysAttendance = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesAttendance = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoAttendance = new TableInfo("attendance", _columnsAttendance, _foreignKeysAttendance, _indicesAttendance);
+        final TableInfo _existingAttendance = TableInfo.read(db, "attendance");
+        if (!_infoAttendance.equals(_existingAttendance)) {
+          return new RoomOpenHelper.ValidationResult(false, "attendance(com.hostelms.database.entities.Attendance).\n"
+                  + " Expected:\n" + _infoAttendance + "\n"
+                  + " Found:\n" + _existingAttendance);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "49c8c4403e9b3af24f6560dbbf498f64", "c47e51223a9c8075fadd9aed8bc41483");
+    }, "c2c8852621771572cd4a32b4749de66e", "555a52f51098e0a5daf3613b63827c55");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -248,7 +274,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "students","rooms","complaints","announcements","attendance","bookings");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "students","rooms","complaints","announcements","bookings","notifications","attendance");
   }
 
   @Override
@@ -261,8 +287,9 @@ public final class AppDatabase_Impl extends AppDatabase {
       _db.execSQL("DELETE FROM `rooms`");
       _db.execSQL("DELETE FROM `complaints`");
       _db.execSQL("DELETE FROM `announcements`");
-      _db.execSQL("DELETE FROM `attendance`");
       _db.execSQL("DELETE FROM `bookings`");
+      _db.execSQL("DELETE FROM `notifications`");
+      _db.execSQL("DELETE FROM `attendance`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -281,8 +308,9 @@ public final class AppDatabase_Impl extends AppDatabase {
     _typeConvertersMap.put(RoomDao.class, RoomDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(ComplaintDao.class, ComplaintDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(AnnouncementDao.class, AnnouncementDao_Impl.getRequiredConverters());
-    _typeConvertersMap.put(AttendanceDao.class, AttendanceDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(BookingDao.class, BookingDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(NotificationDao.class, NotificationDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(AttendanceDao.class, AttendanceDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -358,20 +386,6 @@ public final class AppDatabase_Impl extends AppDatabase {
   }
 
   @Override
-  public AttendanceDao attendanceDao() {
-    if (_attendanceDao != null) {
-      return _attendanceDao;
-    } else {
-      synchronized(this) {
-        if(_attendanceDao == null) {
-          _attendanceDao = new AttendanceDao_Impl(this);
-        }
-        return _attendanceDao;
-      }
-    }
-  }
-
-  @Override
   public BookingDao bookingDao() {
     if (_bookingDao != null) {
       return _bookingDao;
@@ -381,6 +395,34 @@ public final class AppDatabase_Impl extends AppDatabase {
           _bookingDao = new BookingDao_Impl(this);
         }
         return _bookingDao;
+      }
+    }
+  }
+
+  @Override
+  public NotificationDao notificationDao() {
+    if (_notificationDao != null) {
+      return _notificationDao;
+    } else {
+      synchronized(this) {
+        if(_notificationDao == null) {
+          _notificationDao = new NotificationDao_Impl(this);
+        }
+        return _notificationDao;
+      }
+    }
+  }
+
+  @Override
+  public AttendanceDao attendanceDao() {
+    if (_attendanceDao != null) {
+      return _attendanceDao;
+    } else {
+      synchronized(this) {
+        if(_attendanceDao == null) {
+          _attendanceDao = new AttendanceDao_Impl(this);
+        }
+        return _attendanceDao;
       }
     }
   }
