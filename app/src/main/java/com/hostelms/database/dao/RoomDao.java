@@ -13,7 +13,7 @@ public interface RoomDao {
     Room getById(int id);
     @Query("SELECT * FROM rooms WHERE hostelName = :hostel")
     List<Room> getByHostel(String hostel);
-    @Query("SELECT * FROM rooms WHERE status = 'Available'")
+    @Query("SELECT * FROM rooms WHERE occupied < capacity")
     List<Room> getAvailable();
     @Query("SELECT DISTINCT hostelName FROM rooms")
     List<String> getAllHostels();

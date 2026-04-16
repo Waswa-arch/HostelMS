@@ -17,6 +17,7 @@ import com.hostelms.utils.SessionManager;
 import org.json.JSONObject;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -49,9 +50,13 @@ public class BookRoomActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Confirm Booking");
         }
 
-        ((TextView) findViewById(R.id.tvHostelName)).setText(hostelName);
-        ((TextView) findViewById(R.id.tvRoomNumber)).setText("Room " + roomNumber);
-        ((TextView) findViewById(R.id.tvPrice)).setText("Price: " + price + "/month");
+        TextView tvHostelName = findViewById(R.id.tvHostelName);
+        TextView tvRoomNumber = findViewById(R.id.tvRoomNumber);
+        TextView tvPrice = findViewById(R.id.tvPrice);
+
+        if (tvHostelName != null) tvHostelName.setText(hostelName);
+        if (tvRoomNumber != null) tvRoomNumber.setText("Room " + roomNumber);
+        if (tvPrice != null) tvPrice.setText("Price: " + price + "/semester");
 
         btnCheckIn  = findViewById(R.id.btnCheckIn);
         btnCheckOut = findViewById(R.id.btnCheckOut);
@@ -59,23 +64,33 @@ public class BookRoomActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         Spinner spMeal = findViewById(R.id.spMealBundle);
-        String[] bundles = {"Room Only", "Bed & Breakfast (+RM 250)",
-                            "Breakfast & Lunch (+RM 450)", "Full Board (+RM 700)"};
-        spMeal.setAdapter(new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, bundles));
+        if (spMeal != null) {
+            String[] bundles = {"Room Only", "Bed & Breakfast",
+                                "Breakfast & Lunch", "Full Board"};
+            spMeal.setAdapter(new ArrayAdapter<>(this,
+                    android.R.layout.simple_spinner_dropdown_item, bundles));
+        }
 
-        btnCheckIn.setOnClickListener(v  -> pickDate(true));
-        btnCheckOut.setOnClickListener(v -> pickDate(false));
-        btnBook.setOnClickListener(v     -> confirmBooking());
+        if (btnCheckIn != null) btnCheckIn.setOnClickListener(v -> pickDate(true));
+        if (btnCheckOut != null) btnCheckOut.setOnClickListener(v -> pickDate(false));
+        if (btnBook != null) btnBook.setOnClickListener(v -> confirmBooking());
     }
 
     private void pickDate(boolean isCheckIn) {
         Calendar c = Calendar.getInstance();
-        new DatePickerDialog(this, (view, y, m, d) -> {
-            String date = y + "-" + String.format("%02d", m + 1) + "-" + String.format("%02d", d);
-            if (isCheckIn) { checkInDate = date; btnCheckIn.setText("Check-in: " + date); }
-            else           { checkOutDate = date; btnCheckOut.setText("Check-out: " + date); }
-        }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show();
+        DatePickerDialog dialog = new DatePickerDialog(this, (view, y, m, d) -> {
+            String date = y + "-" + String.format(Locale.getDefault(), "%02d", m + 1) + "-" + String.format(Locale.getDefault(), "%02d", d);
+            if (isCheckIn) {
+                checkInDate = date;
+                btnCheckIn.setText("Check-in: " + date);
+            } else {
+                checkOutDate = date;
+                btnCheckOut.setText("Check-out: " + date);
+            }
+        }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+        
+        dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+        dialog.show();
     }
 
     private void confirmBooking() {
@@ -147,9 +162,12 @@ public class BookRoomActivity extends AppCompatActivity {
     }
 
     private void setLoading(boolean on) {
-        progressBar.setVisibility(on ? View.VISIBLE : View.GONE);
-        btnBook.setEnabled(!on);
+        if (progressBar != null) progressBar.setVisibility(on ? View.VISIBLE : View.GONE);
+        if (btnBook != null) btnBook.setEnabled(!on);
     }
 
-    @Override public boolean onSupportNavigateUp() { onBackPressed(); return true; }
+    @Override public boolean onSupportNavigateUp() {
+        getOnBackPressedDispatcher().onBackPressed();
+        return true;
+    }
 }

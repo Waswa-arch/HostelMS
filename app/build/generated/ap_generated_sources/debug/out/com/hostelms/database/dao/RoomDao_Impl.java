@@ -435,7 +435,7 @@ public final class RoomDao_Impl implements RoomDao {
 
   @Override
   public List<Room> getAvailable() {
-    final String _sql = "SELECT * FROM rooms WHERE status = 'Available'";
+    final String _sql = "SELECT * FROM rooms WHERE occupied < capacity";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
